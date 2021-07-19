@@ -77,11 +77,11 @@ A pre-process method of graph against adversarial attacks
 - others
 
   ```python
-  run generate_adv.py #生成对抗样本
+  run generate_adv.py # generate adversarial samples
   ```
 
   ```shell
-  run generate_clean.py #生成MD预处理后的图邻接矩阵
+  run generate_clean.py # generated the clean matrix induced by MD-GNN
   ```
 
   
