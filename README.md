@@ -28,9 +28,9 @@ A pre-process method of graph against adversarial attacks
 - run MD-GCN
 
   ```python
-  # 支持的数据集：['cora', 'citeseer', 'cora_ml']
-  # 支持的攻击：['meta', 'nettack', 'random']
-  # MD支持的标准：['Cfs', 'Cfs1', 'Cfs2', 'Cfs3', 'Cfs4', 'Cs', 'Cs1', 'Jaccard1']
+  # datasets：['cora', 'citeseer', 'cora_ml']
+  # attack：['meta', 'nettack', 'random']
+  # metric：['Cfs', 'Cfs1', 'Cfs2', 'Cfs3', 'Cfs4', 'Cs', 'Cs1', 'Jaccard1']
   device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
   
   data = Dataset(root='data/', name='cora', seed=15, require_mask=True)
@@ -56,20 +56,20 @@ A pre-process method of graph against adversarial attacks
   a = [0.05, 0.1]
   lr_list = [0.001, 0.005, 0.01, 0.05, 0.1]
   
-  # 运行实验1 ~ 5
+  # Experiments 1 ~ 5
   experiment1(dataset_list, attack_list,defense_list, root, root1, save_dir)
   experiment2(dataset_list, attack_list, threshold_list, root, root1, save_dir)
   experiment3(dataset_list, attack_list, root, root1, save_dir, a)
   experiment4(dataset_list, attack_list, defense_list, root, root1, save_dir, 'Cfs4')
   experiment5(dataset_list, attack_list, lr_list, root, root1, save_dir, 'Cfs', 10)
   
-  # 生成实验图片1 ~ 4
+  # Experimental Figures 1 ~ 4
   figure1()
   figure2()
   figure3()
   figure4()
   
-  # 生成实验数据表格
+  # Experimental tables
   result()
   result_time()
   ```
@@ -89,12 +89,12 @@ A pre-process method of graph against adversarial attacks
 # Project Structure
 
 - MD-GNN
-  - adv-adj：保存对抗样本
-  - data：保存原始数据集
-  - defense：各种防御方案，包括我们的方案
-  - experiment：保存实验数据
-  - src：实验、绘图、绘表代码
+  - adv-adj：saved adversarial samples
+  - data：original data
+  - defense：defence approaches
+  - experiment：saved data
+  - src：drawing results
   - generate_adv.py
   - generate_clean.py
   - test.py
-  - utils.py：自定义的工具函数
+  - utils.py：self-defined utility function
